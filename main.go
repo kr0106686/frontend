@@ -1,7 +1,12 @@
 package main
 
-import "net/http"
+import (
+	"log"
+	"net/http"
+)
 
 func main() {
-	http.ListenAndServe(":8000", nil)
+	port := ":8080"
+	log.Printf("http://localhost:%s", port)
+	log.Fatal(http.ListenAndServe(":8000", nil))
 }
